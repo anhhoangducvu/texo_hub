@@ -1,10 +1,10 @@
 [
     {
-        "id": "project_setup",
-        "name": "Thiết lập Dự án",
+        "id": "project_setup_new",
+        "name": "Thiết lập Dự án Master",
         "icon": "🚀",
-        "description": "Tự động tạo chuỗi Milestone Recipe 01 trên Google Calendar.",
-        "url": "#",
+        "description": "Tự động tạo chuỗi Milestone Recipe 01 trên Google Calendar (Bản Online).",
+        "url": "https://texoprojectsetup.streamlit.app/",
         "local_url": "http://localhost:8511",
         "category": "Management"
     },
