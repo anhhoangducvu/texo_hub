@@ -1,0 +1,29 @@
+[
+    {
+        "id": "milestone_assistant",
+        "name": "TEXO Milestone Assistant",
+        "icon": "📧",
+        "description": "Tự động hóa soạn thảo Email nhắc việc dự án theo Milestone.",
+        "url": "https://share.streamlit.io/user/repo_milestone/main/app.py",
+        "local_url": "http://localhost:8502",
+        "category": "Management"
+    },
+    {
+        "id": "texo_toolbox",
+        "name": "TEXO Tool Box",
+        "icon": "🏦",
+        "description": "Bộ công cụ chuẩn hóa văn bản, Audit hợp đồng & OCR.",
+        "url": "https://share.streamlit.io/user/repo_toolbox/main/app.py",
+        "local_url": "http://localhost:8501",
+        "category": "Engineering"
+    },
+    {
+        "id": "legal_audit",
+        "name": "AI Audit Pentagon",
+        "icon": "⚖️",
+        "description": "Rà soát pháp lý và thẩm định hợp đồng đa phương diện.",
+        "url": "#",
+        "local_url": "http://localhost:8501",
+        "category": "Audit"
+    }
+]
