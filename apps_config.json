@@ -4,7 +4,7 @@
         "name": "TEXO Milestone Assistant",
         "icon": "📧",
         "description": "Tự động hóa soạn thảo Email nhắc việc dự án theo Milestone.",
-        "url": "https://share.streamlit.io/user/repo_milestone/main/app.py",
+        "url": "https://soanemailduantexo.streamlit.app/",
         "local_url": "http://localhost:8502",
         "category": "Management"
     },
@@ -12,18 +12,18 @@
         "id": "texo_toolbox",
         "name": "TEXO Tool Box",
         "icon": "🏦",
-        "description": "Bộ công cụ chuẩn hóa văn bản, Audit hợp đồng & OCR.",
-        "url": "https://share.streamlit.io/user/repo_toolbox/main/app.py",
+        "description": "Bộ công cụ Audit hợp đồng, Pháp lý & OCR Kỹ thuật.",
+        "url": "https://texotoolbox.streamlit.app/",
         "local_url": "http://localhost:8501",
         "category": "Engineering"
     },
     {
-        "id": "legal_audit",
-        "name": "AI Audit Pentagon",
-        "icon": "⚖️",
-        "description": "Rà soát pháp lý và thẩm định hợp đồng đa phương diện.",
-        "url": "#",
-        "local_url": "http://localhost:8501",
+        "id": "standardize_doc",
+        "name": "Chuẩn hóa Văn bản",
+        "icon": "📝",
+        "description": "Tự động chuẩn hóa văn bản Word/PDF theo Nghị định 30.",
+        "url": "https://chuanhoavanbantexo.streamlit.app/",
+        "local_url": "http://localhost:8504",
         "category": "Audit"
     }
 ]
