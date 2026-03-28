@@ -9,21 +9,57 @@
         "category": "Management"
     },
     {
-        "id": "texo_toolbox",
-        "name": "TEXO Tool Box",
-        "icon": "🏦",
-        "description": "Bộ công cụ Audit hợp đồng, Pháp lý & OCR Kỹ thuật.",
-        "url": "https://texotoolbox.streamlit.app/",
-        "local_url": "http://localhost:8501",
+        "id": "doc_standardizer_new",
+        "name": "Chuẩn hóa Văn bản Master",
+        "icon": "📄",
+        "description": "Chuẩn hóa hồ sơ theo Nghị định 30 & Quy định TEXO (Bản nâng cấp).",
+        "url": "https://texodocstandardizer.streamlit.app/",
+        "local_url": "http://localhost:8505",
         "category": "Engineering"
     },
     {
-        "id": "standardize_doc",
-        "name": "Chuẩn hóa Văn bản",
-        "icon": "📝",
-        "description": "Tự động chuẩn hóa văn bản Word/PDF theo Nghị định 30.",
-        "url": "https://chuanhoavanbantexo.streamlit.app/",
-        "local_url": "http://localhost:8504",
+        "id": "pdf_to_word_new",
+        "name": "Giải mã PDF Master",
+        "icon": "🧲",
+        "description": "Bóc tách PDF kỹ thuật sang Word với độ chính xác cao.",
+        "url": "https://texopdftoword.streamlit.app/",
+        "local_url": "http://localhost:8506",
+        "category": "Engineering"
+    },
+    {
+        "id": "ai_translator_new",
+        "name": "Dịch thuật AI Master",
+        "icon": "🔠",
+        "description": "Dịch thuật đa ngôn ngữ chuyên ngành kỹ thuật xây dựng.",
+        "url": "https://texoaitranslator.streamlit.app/",
+        "local_url": "http://localhost:8507",
+        "category": "Engineering"
+    },
+    {
+        "id": "legal_reviewer_new",
+        "name": "Rà soát Pháp lý AI",
+        "icon": "🏛️",
+        "description": "Tự động trích xuất và rà soát các văn bản dẫn chiếu.",
+        "url": "https://texolegalreviewer.streamlit.app/",
+        "local_url": "http://localhost:8508",
         "category": "Audit"
+    },
+    {
+        "id": "contract_checker_new",
+        "name": "Audit Hợp đồng Pentagon",
+        "icon": "⚖️",
+        "description": "Ma trận rà soát 5 trụ cột rủi ro trong hợp đồng.",
+        "url": "https://texocontractchecker.streamlit.app/",
+        "local_url": "http://localhost:8509",
+        "category": "Audit"
+    },
+    {
+        "id": "texo_toolbox",
+        "name": "TEXO Tool Box (Legacy)",
+        "icon": "🏦",
+        "description": "Bộ công cụ cũ tích hợp nhiều tính năng.",
+        "url": "https://texotoolbox.streamlit.app/",
+        "local_url": "http://localhost:8501",
+        "category": "Legacy"
     }
 ]
