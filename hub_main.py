@@ -8,8 +8,7 @@ st.set_page_config(page_title="TEXO Hub - Command Center", page_icon="🏦", lay
 # --- STYLE PREMIUM (Dark-Gold Dashboard) ---
 st.markdown("""
 <style>
-    .stApp { background-color: #050C1A !important; color: #ffffff !important; }
-    h1, h2, h3, h4, h5, h6, p, span, div, li, label, .stMarkdown { color: #ffffff !important; }
+    /* --- TỐI ƯU HÓA CSS CHO CẢ 2 CHẾ ĐỘ --- */
     
     .hub-header { 
         background: linear-gradient(90deg, #152A4A 0%, #050C1A 100%);
