@@ -1,74 +1,65 @@
 [
     {
         "id": "project_setup_new",
-        "name": "Thiết lập Dự án Master",
+        "name": "Khởi tạo Dự án",
         "icon": "🚀",
-        "description": "Tự động tạo chuỗi Milestone Recipe 01 trên Google Calendar (Bản Online).",
+        "description": "Tự động thiết lập chuỗi mốc tiến độ dự án (Milestone) trên Google Calendar.",
         "url": "https://texoprojectsetup.streamlit.app/",
         "local_url": "http://localhost:8511",
-        "category": "Management"
+        "category": "Quản trị & Điều hành"
     },
     {
         "id": "milestone_assistant",
-        "name": "TEXO Milestone Assistant",
+        "name": "Tạo Email tự động theo Lịch",
         "icon": "📧",
-        "description": "Tự động hóa soạn thảo Email nhắc việc dự án theo Milestone.",
+        "description": "Hệ thống tự động soạn thảo và gửi Email nhắc việc dự án theo mốc thời gian thực.",
         "url": "https://soanemailduantexo.streamlit.app/",
         "local_url": "http://localhost:8502",
-        "category": "Management"
+        "category": "Quản trị & Điều hành"
     },
     {
         "id": "doc_standardizer_new",
-        "name": "Chuẩn hóa Văn bản Master",
+        "name": "Chuẩn hóa Văn bản TEXO",
         "icon": "📄",
-        "description": "Chuẩn hóa hồ sơ theo Nghị định 30 & Quy định TEXO (Bản nâng cấp).",
+        "description": "Tự động soát lỗi chính tả và định dạng văn bản chuẩn Nghị định 30 & Quy chuẩn TEXO.",
         "url": "https://texodocstandardizer.streamlit.app/",
         "local_url": "http://localhost:8505",
-        "category": "Engineering"
+        "category": "Hồ sơ & Kỹ thuật"
     },
     {
         "id": "pdf_to_word_new",
-        "name": "Giải mã PDF Master",
+        "name": "Chuyển PDF sang Word",
         "icon": "🧲",
-        "description": "Bóc tách PDF kỹ thuật sang Word với độ chính xác cao.",
+        "description": "Số hóa và bóc tách dữ liệu từ file PDF kỹ thuật sang định dạng Word có thể chỉnh sửa.",
         "url": "https://texopdftoword.streamlit.app/",
         "local_url": "http://localhost:8506",
-        "category": "Engineering"
+        "category": "Hồ sơ & Kỹ thuật"
     },
     {
         "id": "ai_translator_new",
-        "name": "Dịch thuật AI Master",
+        "name": "Dịch thuật Hồ sơ tư vấn",
         "icon": "🔠",
-        "description": "Dịch thuật đa ngôn ngữ chuyên ngành kỹ thuật xây dựng.",
+        "description": "Dịch thuật hồ sơ kỹ thuật chuyên ngành Building & Engineering đa ngôn ngữ bằng AI.",
         "url": "https://texoaitranslator.streamlit.app/",
         "local_url": "http://localhost:8507",
-        "category": "Engineering"
+        "category": "Hồ sơ & Kỹ thuật"
     },
     {
         "id": "legal_reviewer_new",
-        "name": "Rà soát Pháp lý AI",
+        "name": "Rà soát Văn bản Pháp lý",
         "icon": "🏛️",
-        "description": "Tự động trích xuất và rà soát các văn bản dẫn chiếu.",
+        "description": "Tự động trích xuất và phân tích mức độ tuân thủ của các văn bản dẫn chiếu pháp lý.",
         "url": "https://texolegalreviewer.streamlit.app/",
         "local_url": "http://localhost:8508",
-        "category": "Audit"
+        "category": "Audit & Pháp lý"
     },
     {
         "id": "contract_checker_new",
-        "name": "Audit Hợp đồng Pentagon",
+        "name": "Rà soát Hợp đồng",
         "icon": "⚖️",
-        "description": "Ma trận rà soát 5 trụ cột rủi ro trong hợp đồng.",
+        "description": "Ma trận rà soát 5 trụ cột rủi ro (Pháp lý, Tài chính, Kỹ thuật, Nhân sự, Tiến độ) trong hợp đồng.",
         "url": "https://texocontractchecker.streamlit.app/",
         "local_url": "http://localhost:8509",
-        "category": "Audit"
-    },
-    {
-        "id": "texo_toolbox",
-        "name": "TEXO Tool Box (Legacy)",
-        "icon": "🏦",
-        "description": "Bộ công cụ cũ tích hợp nhiều tính năng.",
-        "url": "https://texotoolbox.streamlit.app/",
-        "local_url": "http://localhost:8501",
-        "category": "Legacy"
+        "category": "Audit & Pháp lý"
     }
 ]

@@ -3,9 +3,9 @@ import json
 import os
 
 # --- PAGE CONFIG ---
-st.set_page_config(page_title="TEXO Hub - Central Station", page_icon="🏦", layout="wide")
+st.set_page_config(page_title="TEXO Hub - Command Center", page_icon="🏦", layout="wide")
 
-# --- STYLE PREMIUM (Dark-Gold Hub) ---
+# --- STYLE PREMIUM (Dark-Gold Dashboard) ---
 st.markdown("""
 <style>
     .stApp { background-color: #050C1A !important; color: #ffffff !important; }
@@ -13,68 +13,83 @@ st.markdown("""
     
     .hub-header { 
         background: linear-gradient(90deg, #152A4A 0%, #050C1A 100%);
-        padding: 40px;
+        padding: 60px 40px;
         text-align: center;
-        border-bottom: 3px solid #FFD700;
-        margin-bottom: 40px;
-        border-radius: 0 0 50px 50px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        margin-bottom: 50px;
+        border-radius: 0 0 60px 60px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     }
     
-    .hub-title { color: #FFD700 !important; font-weight: 900; font-size: 48px; letter-spacing: 2px; }
-    .hub-subtitle { color: #888 !important; font-size: 18px; margin-top: 10px; }
+    .hub-title { color: #FFD700 !important; font-weight: 900; font-size: 56px; letter-spacing: 3px; margin-bottom: 10px; }
+    .hub-subtitle { color: #888 !important; font-size: 18px; letter-spacing: 1px; }
 
+    /* Category Headers */
+    .cat-header {
+        color: #FFD700 !important;
+        font-size: 24px;
+        font-weight: 800;
+        margin: 40px 0 20px 10px;
+        border-left: 5px solid #FFD700;
+        padding-left: 15px;
+    }
+
+    /* Clickable App Card */
     .app-card {
-        background: #152A4A;
-        border: 1px solid rgba(255, 215, 0, 0.2);
-        border-radius: 20px;
-        padding: 25px;
-        height: 280px;
-        transition: 0.3s ease-in-out;
+        background: #112240;
+        border: 1px solid rgba(255, 215, 0, 0.1);
+        border-radius: 25px;
+        padding: 30px;
+        height: 240px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        margin-bottom: 20px;
+        justify-content: center;
+        cursor: pointer;
+        text-decoration: none !important;
+        position: relative;
+        overflow: hidden;
     }
+    
     .app-card:hover {
         border: 1px solid #FFD700;
-        box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
-        transform: translateY(-5px);
+        box-shadow: 0 10px 40px rgba(255, 215, 0, 0.15);
+        transform: translateY(-8px);
+        background: #152A4A;
     }
     
-    .app-icon { font-size: 50px; margin-bottom: 15px; }
-    .app-name { color: #FFD700 !important; font-weight: 800; font-size: 22px; margin-bottom: 10px; }
-    .app-desc { color: #cccccc !important; font-size: 14px; line-height: 1.5; }
-    
-    .launch-btn {
-        background: transparent !important;
-        color: #FFD700 !important;
-        border: 2px solid #FFD700 !important;
-        border-radius: 10px;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
+    .app-card::after {
+        content: 'TRUY CẬP 🚀';
+        position: absolute;
+        bottom: -40px;
+        right: 20px;
+        font-size: 11px;
+        color: #FFD700;
         font-weight: bold;
-        margin-top: 20px;
-        transition: 0.2s;
+        transition: 0.3s;
+        opacity: 0;
     }
-    .launch-btn:hover {
-        background: #FFD700 !important;
-        color: #050C1A !important;
+    .app-card:hover::after {
+        bottom: 20px;
+        opacity: 1;
     }
+    
+    .app-icon { font-size: 55px; margin-bottom: 20px; }
+    .app-name { color: #FFD700 !important; font-weight: 800; font-size: 24px; margin-bottom: 12px; }
+    .app-desc { color: #a8b2d1 !important; font-size: 14px; line-height: 1.6; }
+
+    .footer { text-align: center; color: #444; font-size: 13px; margin: 80px 0 40px 0; border-top: 1px solid #112240; padding-top: 30px; }
 </style>
 """, unsafe_allow_html=True)
 
 # --- AUTHENTICATION REMOVED BY USER REQUEST ---
 # Initial authentication block removed for GitHub deployment.
 
-
 # --- HEADER ---
 st.markdown("""
 <div class="hub-header">
     <div class="hub-title">🏦 TEXO HUB</div>
-    <div class="hub-subtitle">Trạm Điều Khiển Trung Tâm | Cổng kết nối Hệ sinh thái Công cụ TEXO</div>
+    <div class="hub-subtitle">Phân hệ Quản trị & Điều phối Công tác Kỹ thuật | AI Ecosystem</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -86,29 +101,39 @@ def load_apps():
     except:
         return []
 
-apps = load_apps()
+apps_list = load_apps()
+
+# --- GROUP APPS BY CATEGORY ---
+categories = {}
+for app in apps_list:
+    cat = app.get("category", "Sản phẩm khác")
+    if cat not in categories:
+        categories[cat] = []
+    categories[cat].append(app)
 
 # --- DASHBOARD GRID ---
-st.markdown("### 🛠 PHÂN HỆ TIỆN ÍCH")
-
-# Chia lưới 3 cột
-cols = st.columns(3)
-
-for i, app in enumerate(apps):
-    with cols[i % 3]:
-        # Mỗi card là một container
-        st.markdown(f"""
-        <div class="app-card">
-            <div>
-                <div class="app-icon">{app['icon']}</div>
-                <div class="app-name">{app['name']}</div>
-                <div class="app-desc">{app['description']}</div>
-            </div>
-            <a href="{app['url']}" target="_blank" class="launch-btn">🚀 CHẠY ONLINE</a>
-            <a href="{app['local_url']}" target="_blank" style="font-size: 11px; color: #555; display: block; margin-top: 5px; text-decoration: none;">Chạy Local (Máy chủ)</a>
-        </div>
-        """, unsafe_allow_html=True)
+for cat_name, apps in categories.items():
+    st.markdown(f"<div class='cat-header'>{cat_name.upper()}</div>", unsafe_allow_html=True)
+    
+    # Chia lưới 3 cột cho mỗi category
+    cols = st.columns(3)
+    for i, app in enumerate(apps):
+        with cols[i % 3]:
+            # Tạo card clickable bằng thẻ <a> bao quanh
+            st.markdown(f"""
+            <a href="{app['url']}" target="_blank" style="text-decoration: none;">
+                <div class="app-card">
+                    <div class="app-icon">{app['icon']}</div>
+                    <div class="app-name">{app['name']}</div>
+                    <div class="app-desc">{app['description']}</div>
+                </div>
+            </a>
+            """, unsafe_allow_html=True)
 
 # --- FOOTER ---
-st.markdown("---")
-st.markdown("<p class='footer' style='text-align: center; color: #444;'>© 2026 TEXO Engineering Department | Trưởng phòng: Hoàng Đức Vũ</p>", unsafe_allow_html=True)
+st.markdown(f"""
+<div class="footer">
+    © 2026 TEXO Engineering Department | Trưởng phòng: Hoàng Đức Vũ<br>
+    Hệ sinh thái Công cụ AI nâng cao năng suất Tư vấn Kỹ thuật hàng đầu Việt Nam
+</div>
+""", unsafe_allow_html=True)
