@@ -66,26 +66,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# --- AUTHENTICATION ---
-def check_password():
-    if "hub_authenticated" not in st.session_state: st.session_state.hub_authenticated = False
-    if st.session_state.hub_authenticated: return True
-    
-    col1, col2, col3 = st.columns([1, 1.5, 1])
-    with col2:
-        st.markdown("<div style='text-align: center; padding-top: 100px;'>", unsafe_allow_html=True)
-        st.markdown("<h1 style='color: #FFD700;'>🏦 TEXO HUB</h1>", unsafe_allow_html=True)
-        st.markdown("<p style='color: #888;'>Hệ thống Quản trị & Điều hành Kỹ thuật</p>", unsafe_allow_html=True)
-        pwd = st.text_input("Mật khẩu truy cập Hub:", type="password")
-        if st.button("XÁC THỰC HỆ THỐNG"):
-            if pwd == "texo2026":
-                st.session_state.hub_authenticated = True
-                st.rerun()
-            else: st.error("❌ Mật khẩu không chính xác.")
-        st.markdown("</div>", unsafe_allow_html=True)
-    return False
+# --- AUTHENTICATION REMOVED BY USER REQUEST ---
+# Initial authentication block removed for GitHub deployment.
 
-if not check_password(): st.stop()
 
 # --- HEADER ---
 st.markdown("""
