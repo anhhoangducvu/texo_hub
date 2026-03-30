@@ -8,35 +8,35 @@ st.set_page_config(page_title="TEXO Hub - Command Center", page_icon="🏦", lay
 # --- STYLE PREMIUM (Dark-Gold Dashboard) ---
 st.markdown("""
 <style>
-    /* --- TỐI ƯU HÓA CSS CHO CẢ 2 CHẾ ĐỘ (ADAPTIVE THEME) --- */
+    /* --- TINH CHỈNH ĐỘ TƯƠNG PHẢN (ADAPTIVE THEME V2.2) --- */
     
     .hub-header { 
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
         padding: 50px 30px;
         text-align: center;
         border-bottom: 2px solid #FFD700;
         margin-bottom: 40px;
         border-radius: 0 0 40px 40px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
     
-    .hub-title { color: #FFD700 !important; font-weight: 900; font-size: 52px; margin-bottom: 15px; }
-    .hub-subtitle { color: #94a3b8 !important; font-size: 16px; font-weight: 500; }
+    .hub-title { color: #FFD700 !important; font-weight: 900; font-size: 52px; margin-bottom: 10px; }
+    .hub-subtitle { color: #cbd5e1 !important; font-size: 15px; font-weight: 400; }
 
-    /* Category Headers: Tự động đổi màu chữ theo theme */
+    /* Category Headers */
     .cat-header {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 800;
         margin: 40px 0 20px 10px;
         border-left: 5px solid #FFD700;
         padding-left: 15px;
     }
 
-    /* Thẻ ứng dụng thông minh: Tự thích ứng Light/Dark */
+    /* Thẻ ứng dụng với độ tương phản cao hơn trong Light mode */
     .app-card {
-        background-color: var(--secondary-background-color) !important;
-        border: 1px solid rgba(255, 215, 0, 0.1) !important;
-        border-radius: 20px !important;
+        background-color: #f1f5f9; /* Slate 100 - Nhìn vững chãi hơn trên nền trắng */
+        border: 1px solid rgba(15, 23, 42, 0.1) !important;
+        border-radius: 18px !important;
         padding: 30px !important;
         height: 220px !important;
         transition: all 0.3s ease !important;
@@ -44,30 +44,53 @@ st.markdown("""
         flex-direction: column !important;
         justify-content: center !important;
         text-decoration: none !important;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03) !important;
         position: relative;
         overflow: hidden;
     }
     
+    /* Dark mode override for card background */
+    @media (prefers-color-scheme: dark) {
+        .app-card {
+            background-color: #112240 !important;
+            border: 1px solid rgba(255, 215, 0, 0.1) !important;
+        }
+    }
+
+    /* Logic riêng cho Streamlit Dark/Light (Streamlit can override via class names) */
+    .stApp[data-test-theme="light"] .app-card {
+        background-color: #f1f5f9 !important;
+    }
+    .stApp[data-test-theme="dark"] .app-card {
+        background-color: #112240 !important;
+    }
+
     .app-card:hover {
         border: 1px solid #FFD700 !important;
-        box-shadow: 0 12px 25px rgba(255, 215, 0, 0.1) !important;
+        box-shadow: 0 12px 30px rgba(255, 215, 0, 0.1) !important;
         transform: translateY(-8px) !important;
+        background-color: #ffffff !important; /* Khi hover thì sáng lên */
     }
 
     .app-icon { font-size: 45px; margin-bottom: 15px; }
     
     .app-name { 
-        color: #FFD700 !important; 
-        font-size: 22px !important; 
+        color: #1e293b !important; /* Navy đậm để dễ nhìn */
+        font-size: 20px !important; 
         font-weight: 800 !important; 
-        margin-bottom: 10px !important; 
+        margin-bottom: 8px !important; 
     }
     
     .app-desc { 
-        font-size: 14px !important; 
-        opacity: 0.8 !important; 
+        color: #475569 !important; /* Gray-Slate để dịu mắt */
+        font-size: 13.5px !important; 
         line-height: 1.5 !important;
+    }
+    
+    /* Quay lại màu Gold/Trắng cho text trong Dark Mode */
+    @media (prefers-color-scheme: dark) {
+        .app-name { color: #FFD700 !important; }
+        .app-desc { color: #94a3b8 !important; }
     }
     
     .app-card::after {
@@ -86,7 +109,7 @@ st.markdown("""
         opacity: 1;
     }
 
-    .footer { text-align: center; color: #888; font-size: 12px; margin-top: 50px; border-top: 1px solid rgba(255, 215, 0, 0.2); padding-top: 20px; }
+    .footer { text-align: center; color: #64748b; font-size: 12px; margin-top: 50px; border-top: 1px solid rgba(255, 215, 0, 0.2); padding-top: 20px; }
 </style>
 """, unsafe_allow_html=True)
 
