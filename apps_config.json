@@ -45,6 +45,15 @@
         "category": "Hồ sơ & Kỹ thuật"
     },
     {
+        "id": "tvgs_checker_new",
+        "name": "Kiểm tra Báo cáo TVGS",
+        "icon": "🏗️",
+        "description": "Tự động rà soát và kiểm tra nội dung Báo cáo hoàn thành công tác Tư vấn giám sát theo chuẩn.",
+        "url": "https://tvgstexochecker.streamlit.app/",
+        "local_url": "http://localhost:8515",
+        "category": "Hồ sơ & Kỹ thuật"
+    },
+    {
         "id": "legal_reviewer_new",
         "name": "Rà soát Văn bản Pháp lý",
         "icon": "🏛️",
